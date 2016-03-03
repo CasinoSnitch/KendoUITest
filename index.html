@@ -1,245 +1,131 @@
 <!DOCTYPE html>
-<html lang="en"><head><style scope="pd-drawer">paper-toolbar.paper-toolbar-0.pd-drawer, .paper-toolbar.pd-drawer {
-  font-weight: 300 !important;
-  position: fixed;
-  display: inline-block;
-  width: 100%;
-  height: 2.6em;
-  padding: 0.7em 0;
-  z-index: 1;
-}
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.226/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.226/styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.226/styles/kendo.mobile.all.min.css" />
 
-.toolbar-tools.paper-toolbar.pd-drawer {
-  padding: 0 !important;
-}
-
-paper-icon-button.pd-drawer {
-  line-height: 16px;
-}
-
-.top-stuff.pd-drawer {
-  padding-top: 4em;
-}
-
-.main.pd-drawer {
-  width: 100%;
-  position: fixed;
-  top: 4em;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-#main.pd-drawer {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.main-section.pd-drawer {
-  box-sizing: border-box;
-}
-
-.left-drawer.pd-drawer, .right-drawer.pd-drawer {
-  height: calc(100% - 4em);
-  position: fixed;
-  top: 4em;
-  overflow-y: hidden;
-  transition: transform ease-in-out 0.3s;
-  width: 15em;
-  overflow-x: hidden;
-}
-
-.drawer-inner-width.pd-drawer {
-  width: 15em;
-}
-
-.drawer-inner.pd-drawer {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: -15px;
-  overflow: auto;
-  height: 100%;
-  overflow-y: auto;
-  width: 300px;
-}
-
-.right-drawer.pd-drawer {
-  right: -15em;
-  z-index: 3;
-}
-
-.left-drawer.pd-drawer {
-  left: -15em;
-  z-index: 3;
-}
-
-.left-show.pd-drawer .left-drawer.pd-drawer {
-  visibility: visible;
-  width: 15em;
-  transform: translate(15em);
-}
-
-.right-show.pd-drawer .right-drawer.pd-drawer {
-  transform: translate(-15em);
-}
-
-.scrim.pd-drawer {
-  display: none;
-}
-
-.main-section.pd-drawer, .left-show.pd-drawer .scrim.pd-drawer, .right-show.pd-drawer .scrim.pd-drawer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.main-section.pd-drawer {
-  height: calc(100% - 4em);
-  overflow: auto;
-}
-
-.mobile-mode.pd-drawer {
-  display: none;
-}
-
-.main.pd-drawer iron-icon.pd-drawer {
-  height: 1.1em !important;
-  width: 1.1em !important;
-}
-
-@media (min-width: 800px) {
-.right-locked.pd-drawer .main-section.pd-drawer {
-  width: calc(100% - 15em);
-}
-
-.left-locked.pd-drawer .left-drawer.pd-drawer, .right-locked.pd-drawer .right-drawer.pd-drawer {
-  visibility: visible;
-    width: 15em;
-    display: block;
-}
-
-.right-locked.pd-drawer .right-drawer.pd-drawer {
-  transform: translate(-15em);
-}
-
-.left-locked.pd-drawer .left-drawer.pd-drawer {
-  transform: translate(15em);
-}
-
-.left-locked.pd-drawer .main-section.pd-drawer {
-  padding-left: 15em;
-}
-
-.left-locked.pd-drawer .left-show-btn.pd-drawer, .right-locked.pd-drawer .right-show-btn.pd-drawer {
-  display: none;
-}
-
-.left-locked.pd-drawer .pd-toolbar-header.pd-drawer {
-  padding-left: 1em;
-}
-
-.pin-btn.pd-drawer {
-  position: absolute;
-    top: 0;
-    right: 0;
-    right: 3.8em;
-}
-
-.left-drawer.pd-drawer .pin-btn.pd-drawer {
-  left: 12.9em;
-}
-
-.right-drawer.pd-drawer .pin-btn.pd-drawer {
-  right: 3.5em;
-}
-
-.mobile-mode.pd-drawer {
-  display: block;
-}
-
-}
-
-@media (max-width: 640px) {
-.main.pd-drawer {
-  top: 3.6em;
-}
-
-}
-
-@media (max-width: 800px) {
-.pin-btn.pd-drawer {
-  display: none;
-}
-
-.left-locked.pd-drawer .main-section.pd-drawer {
-  padding-left: 0;
-}
-
-.right-locked.pd-drawer .main-section.pd-drawer {
-  padding-right: 0;
-}
-
-.left-locked.pd-drawer .left-show-btn.pd-drawer, .right-locked.pd-drawer .right-show-btn.pd-drawer {
-  display: block;
-}
-
-}</style><style>body {transition: opacity ease-in 0.2s; } 
-body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
-</style>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <title>Polymer Project</title>
-    <script src="./bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link rel="import" href="./app/components/pd-dashboard/pd-dashboard.html">
-  </head>
-  <body>
-    <pd-dashboard>
-    <pd-drawer class="style-scope pd-dashboard" drawer-classes="left-locked right-locked">
-    <div id="drawer" class="left-locked right-locked style-scope pd-drawer">
-      <div class="c-p paper-toolbar p-1-05 p-r-05 shadow-bottom style-scope pd-drawer">
-        <div class="scrim style-scope pd-drawer"></div>
-        <paper-icon-button icon="more-vert" title="more-vert" class="left-show-btn f-left style-scope pd-drawer"></paper-icon-button>
-        <div class="pd-toolbar-header p-1-05 f-left style-scope pd-drawer">
-          <div class="logo style-scope pd-dashboard">Logo here</div>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2016.1.226/js/kendo.all.min.js"></script>
+</head>
+<body>
+<div data-role="view" data-init="mobileListViewPullWithEndless" data-title="Pull to refresh">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a data-align="left" data-icon="add" data-role="button"  data-rel="modalview" href="#modalview-add"></a>
+            <span data-role="view-title"></span>
+            <a data-align="right" data-role="button" class="nav-button" data-icon="home" href="#/"></a>
+            <a data-align="right" data-icon="source-code" data-click="goToSourceCode" data-role="button" title="Show this demo source code"></a>
         </div>
-        <paper-icon-button icon="more-vert" title="more-vert" class="right-show-btn f-right style-scope pd-drawer"></paper-icon-button>
-      </div>
-      <div class="main c-n-dark style-scope pd-drawer">
-        <div class="main-section style-scope pd-drawer">
-          <div id="main" class="style-scope pd-dashboard">Main stuff here</div>
+    </header>
+    <ul id="pull-with-endless-listview"></ul>
+</div>
+
+<div data-role="modalview" id="modalview-add" style="width: 95%;" >
+    <div data-role="header">
+        <div data-role="navbar">
+            <span>Add Product</span>
+            <a data-click="closeModalViewAdd" data-role="button" data-align="right">Cancel</a>
         </div>
-        <div class="scrim style-scope pd-drawer"></div>
-        <div class="left-drawer c-n-light shadow-right style-scope pd-drawer">
-          <div class="drawer-inner style-scope pd-drawer">
-            <div class="drawer-inner-width style-scope pd-drawer">
-              <div class="left-menu p-t-1 style-scope pd-dashboard">
-        <pd-list-item position="left" icon="home" url="#!" class="style-scope pd-dashboard">Home</pd-list-item>
-        <pd-list-item position="left" icon="account-box" url="#!/profile" class="style-scope pd-dashboard">Profile</pd-list-item>
-        <pd-list-item position="left" icon="view-module" url="#!/staff" class="style-scope pd-dashboard">Staff</pd-list-item>
-        <pd-list-item position="left" icon="exit-to-app" url="http://localhost:8080/auth/logout" class="style-scope pd-dashboard">Logout</pd-list-item>
-      </div>
-              <paper-icon-button icon="turned-in" title="turned-in" class="pin-btn c-text-light style-scope pd-drawer"></paper-icon-button>
-            </div>
-          </div>
-        </div>
-        <div class="right-drawer c-n-light shadow-left style-scope pd-drawer">
-          <div class="drawer-inner style-scope pd-drawer">
-            <div class="drawer-inner-width style-scope pd-drawer">
-              <div class="right-menu style-scope pd-dashboard">Right Menu here</div>
-              <paper-icon-button icon="turned-in" title="turned-in" class="pin-btn c-text-light style-scope pd-drawer"></paper-icon-button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </pd-drawer>
-  </pd-dashboard>
-  
-</body></html>
+
+    <ul data-role="listview" data-style="inset">
+        <li><label for="username" class="km-label-above">Product Name <input type="text" id="name" /></label> </li>
+        <li><i></i> <a data-role="button" data-click="addNew" class="km-justified km-primary" type="button" data-align="right">Add New Product</a></li>
+    </ul>
+</div>
+
+<script type="text/x-kendo-tmpl" id="pull-with-endless-template">
+    <div class="product-item">
+        <h3>#:ProductName#</h3>
+        <span class="km-badge km-listview-item-badge">#:kendo.toString(UnitPrice, "c")#</span>
+    </div>
+</script>
+
+<script>
+    function mobileListViewPullWithEndless(e) {
+        var dataSource = new kendo.data.DataSource({
+            transport: {
+                read: {
+                    url: "//demos.telerik.com/kendo-ui/service/Products/Read",
+                    dataType: "jsonp"
+                }
+            },
+            schema: {
+                total: function () { return 77; }
+            },
+            serverPaging: true,
+            pageSize: 50
+        });
+
+        $("#pull-with-endless-listview").kendoMobileListView({
+            dataSource: dataSource,
+            template: $("#pull-with-endless-template").text(),
+            pullToRefresh: true,
+            endlessScroll: true
+        });
+
+        $("#addNew").click(function () {
+            loader.show();
+            addProductDataSource.add({
+                ProductName: $("#name").val(),
+                UnitPrice: Math.floor((Math.random() * 10) + 1)
+            });
+        });
+    }
+
+    function closeModalViewAdd() {
+        $("#modalview-add").kendoMobileModalView("close");
+    }
+
+    function addNew() {
+        addProductDataSource.add({
+            ProductName: $("#name").val(),
+            UnitPrice: Math.floor((Math.random() * 10) + 1)
+        });
+
+        closeModalViewAdd();
+    }
+
+    var addProductDataSource = new kendo.data.DataSource({
+        transport: {
+            create: {
+                url: "//demos.telerik.com/kendo-ui/service/Products/Create",
+                dataType: "jsonp"
+            },
+            parameterMap: function (options, operation) {
+                if (operation !== "read" && options.models) {
+                    return { models: kendo.stringify(options.models) };
+                }
+            }
+        },
+        schema: {
+            model: {
+                id: "ProductID",
+                fields: {
+                    ProductID: { editable: false, nullable: true },
+                    ProductName: { type: "string" }
+                }
+            }
+        },
+        autoSync: true,
+        batch: true,
+        requestEnd: function () {
+            $("#name").val("");
+        }
+    });
+</script>
+
+<style>
+    .product-item h3 {
+        margin: 0;
+    }
+</style>
+
+
+<script>
+    var app = new kendo.mobile.Application(document.body, { skin: "nova" });
+</script>
+</body>
+</html>
